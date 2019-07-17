@@ -107,6 +107,8 @@ ul {
   margin: 3rem 0;
 }
 
+.center {
+}
 /* Showcase */
 
 #showcase {
@@ -119,40 +121,40 @@ ul {
 }
 
 #showcase .content-wrap {
-  width: 95%;
+  padding: 1rem 0 0 0;
+  width: 80%;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em 5em;
+  position: relative;
+  background: #cf5c36;
 }
 
-#nav-logo img {
-  /* object-fit: cover; */
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+#nav-logo {
+  background-image: url(./img/logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  width: 200px;
+  height: 100px;
 }
 
 #hamburger-toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
   z-index: 2;
   cursor: pointer;
+  left: 0;
   width: 50px;
   height: 50px;
+  position: absolute;
   opacity: 0;
 }
 
 #hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
   z-index: 1;
   width: 60px;
   height: 60px;
   padding: 1rem;
-  background: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,6 +171,7 @@ ul {
   transition: all 0.4s ease;
 }
 
+/* Top and bottom lines up */
 #hamburger > div::before,
 #hamburger > div::after {
   content: "";
@@ -180,6 +183,7 @@ ul {
   background: inherit;
 }
 
+/* Moves line down */
 #hamburger > div::after {
   top: 10px;
 }
@@ -189,10 +193,42 @@ ul {
   transform: rotate(135deg);
 }
 
+/* Turn lines into X */
 #hamburger-toggler:checked + #hamburger > div::before,
 #hamburger-toggler:checked + #hamburger > div::after {
   top: 0;
   transform: rotate(90deg);
+}
+
+/* hamburger-toggler animate on hover*/
+#hamburger-toggler:checked:hover + #hamburger > div {
+  transform: rotate(225deg);
+}
+
+#nav-menu {
+  background: #28a745;
+  position: absolute;
+  top: 116px; /* 100px of img height and 1rem padding = 16 px */
+  left: 0;
+
+  /* visibility: hidden; */
+  /* overflow: hidden; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#nav-menu li {
+}
+
+#nav-menu a {
+  display: block;
+  padding: 2rem;
 }
 
 /* Section a */
